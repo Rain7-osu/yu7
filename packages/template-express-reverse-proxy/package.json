@@ -1,0 +1,20 @@
+{
+  "name": "express-reverse-proxy",
+  "version": "0.1.0",
+  "description": "a express reverse proxy server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "express",
+    "proxy",
+    "server"
+  ],
+  "author": "Rain7",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1"
+  }
+}

@@ -1,0 +1,4 @@
+**/*/node_modules/**/*
+config.json
+vite.config.ts
+**/*/public/*/**

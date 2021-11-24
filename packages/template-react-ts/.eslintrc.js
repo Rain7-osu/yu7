@@ -8,7 +8,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:import-order/recommended',
+    'plugin:import/recommended',
   ],
   'parser': '@typescript-eslint/parser',
   'parserOptions': {
@@ -22,7 +22,7 @@ module.exports = {
     'react',
     '@typescript-eslint',
     'react-hooks',
-    'import-order',
+    'import',
   ],
   'ignorePatterns': [
     'dist/**/*',

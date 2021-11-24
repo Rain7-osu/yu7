@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000
 const app = express()
 
 const proxy = createProxyMiddleware('/api', {
-  target: 'http://175.27.138.106:3008',
+  target: 'todo: proxy url',
   changeOrigin: true,
 })
 

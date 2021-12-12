@@ -6,11 +6,14 @@ import type {
 } from 'axios';
 import axios from 'axios';
 
-export interface HttpInstance extends AxiosInstance {
+export type IMethod = 'get' | 'post' | 'put' | 'patch' | 'delete';
+
+export interface IHttpInstance extends AxiosInstance {
   request: <T = any>(config: AxiosRequestConfig) => Promise<T>;
   get: <T = any>(url: string, config?: AxiosRequestConfig) => Promise<T>;
   post: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
   put: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
+  patch: <T = any>(url: string, data?: any, config?: AxiosRequestConfig) => Promise<T>;
   delete: <T = any>(url: string, config?: AxiosRequestConfig) => Promise<T>;
 }
 

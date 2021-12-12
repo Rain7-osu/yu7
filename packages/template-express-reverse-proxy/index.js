@@ -5,12 +5,12 @@ const PORT = process.env.PORT || 3000
 
 const app = express()
 
-const proxy = createProxyMiddleware('/api', {
+const proxy = createProxyMiddleware('/services', {
   target: 'todo: proxy url',
   changeOrigin: true,
 })
 
-app.use('/api', proxy)
+app.use('/services', proxy)
 
 app.listen(PORT, () => {
   console.log('Express server started...')

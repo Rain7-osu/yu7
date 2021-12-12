@@ -2,12 +2,15 @@
   "name": "yu-project",
   "version": "0.0.0",
   "scripts": {
+    "prepare": "npx husky install",
     "reinstall": "rm -rf node_modules && pnpm i",
     "dev": "vite",
     "build": "rm -rf dist && tsc && vite build",
     "serve": "vite preview",
     "lint": "eslint src",
-    "lint:fix": "eslint src --fix"
+    "lint:fix": "eslint src --fix",
+    "commit-check": "node script/commitCheck.js",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "axios": "^0.23.0",
@@ -33,11 +36,15 @@
     "@typescript-eslint/parser": "^5.1.0",
     "@vitejs/plugin-legacy": "^1.6.2",
     "@vitejs/plugin-react": "^1.0.0",
+    "chalk": "^4.1.2",
     "es-check": "^6.0.0",
-    "eslint": "^7.32.0",
-    "eslint-plugin-import": "^2.25.2",
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.x",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-react": "7.x",
     "eslint-plugin-react-hooks": "^4.x",
+    "eslint-plugin-spellcheck": "0.0.19",
+    "husky": "^7.0.4",
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
   }

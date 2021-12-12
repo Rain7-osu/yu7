@@ -1,4 +1,4 @@
-import { fetchIncrement } from '../api/fetchIncrement';
+import { fetchIncrement } from '../services/fetchIncrement';
 import { Model } from './types';
 
 export interface GlobalState {
@@ -13,7 +13,7 @@ const model: Model<GlobalState> = {
   namespace: 'global',
   state: initState,
   reducers: {
-    increment (prevState, action) {
+    increment(prevState, action) {
       return {
         ...prevState,
         currentCount: action.payload,

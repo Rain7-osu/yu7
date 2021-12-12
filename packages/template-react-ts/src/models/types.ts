@@ -14,7 +14,7 @@ export interface Model<State = any, Payload = any> {
   namespace?: string;
   state?: State;
   reducers?: {
-    [key: string]: Reducer<State, CustomAction<Payload>>
+    [key: string]: Reducer<State, CustomAction<Payload>>;
   };
   effects?: EffectsMapObject;
   subscriptions?: SubscriptionsMapObject;

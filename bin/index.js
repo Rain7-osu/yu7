@@ -22,6 +22,8 @@ const TEMPLATES = [
     name: 'react-ts',
     files: [
       'src',
+      'script',
+      '.husky',
       '.eslintrc.js',
       'index.html',
       'package.json',

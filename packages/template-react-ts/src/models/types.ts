@@ -4,7 +4,7 @@ import { GlobalState } from './global';
 
 export type Reducer<S, A> = (prevState: S, action: A) => S;
 
-export interface CustomAction<T> extends Action {
+export interface ICustomAction<T = any> extends Action {
   [key: string]: any;
   type: string;
   payload: T;
@@ -14,12 +14,12 @@ export interface Model<State = any, Payload = any> {
   namespace?: string;
   state?: State;
   reducers?: {
-    [key: string]: Reducer<State, CustomAction<Payload>>;
+    [key: string]: Reducer<State, ICustomAction<Payload>>;
   };
   effects?: EffectsMapObject;
   subscriptions?: SubscriptionsMapObject;
 }
 
-export interface RootState {
+export interface IRootState {
   global: GlobalState;
 }

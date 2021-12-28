@@ -36,7 +36,7 @@ module.exports = {
     'src/vite-env.d.ts',
   ],
   'rules': {
-    'array-bracket-newline': ['error', 'consistent'],
+    'array-bracket-newline': ['error', { 'multiline': true }],
     'array-bracket-spacing': ['error', 'never'],
     'arrow-spacing': ['error', {
       'before': true,
@@ -65,7 +65,7 @@ module.exports = {
     'line-comment-position': 'error',
     'lines-around-comment': 'error',
     'lines-between-class-members': 'error',
-    'max-params': ['error', { 'max': 5 }],
+    'max-params': ['error', { 'max': 3 }],
     'multiline-comment-style': 'error',
     'new-cap': 'error',
     'no-alert': 'error',
@@ -103,10 +103,11 @@ module.exports = {
     'space-infix-ops': 'error',
     'object-curly-spacing': ['error', 'always'],
     'generator-star-spacing': ['error', { 'before': false, 'after': true }],
+    'prefer-destructuring': ['error'],
     'max-len': ['error', {
       'code': 120,
       'ignoreUrls': true,
-      'ignoreStrings': true,
+      // 'ignoreStrings': true
       'ignoreRegExpLiterals': true,
     }],
     '@typescript-eslint/no-unused-vars': ['error', {
@@ -118,7 +119,6 @@ module.exports = {
     '@typescript-eslint/member-delimiter-style': 'error',
     '@typescript-eslint/prefer-enum-initializers': 'error',
     '@typescript-eslint/no-explicit-any': ['off'],
-    'prefer-destructuring': ['error'],
     'react/jsx-no-undef': 'error',
     'react/jsx-no-duplicate-props': 'error',
     'react/self-closing-comp': ['error', {
@@ -159,15 +159,22 @@ module.exports = {
         'skipWords': [
           'axios',
           'dva',
+          'href',
           'req',
           'sno',
           'tno',
           'namespace',
+          'pathname',
           'sider',
-          'cls',
+          'len',
+          'vh',
+          'closable',
+          'Checkbox',
+          'gdaic',
+          'gdoic'
         ],
         'skipIfMatch': [
-          'http://[^s]*',
+          'httpInstance://[^s]*',
           'https://[^s]*',
         ],
         'skipWordIfMatch': [],

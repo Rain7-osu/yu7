@@ -23,3 +23,24 @@ if (!releaseRE.test(msg) && !commitRE.test(msg)) {
   );
   process.exit(1);
 }
+
+// if (!bindRequirements.test(msg)) {
+//   console.log()
+//   console.error(
+//     `  ${chalk.bgRed.white(' ERROR ')} ${chalk.red(
+//       `Invalid commit message.`,
+//     )}\n\n` +
+//     `  The commit message should in format: ${chalk.green(
+//       'feat/fix: to #xxxx',
+//     )}\n\n`
+//   )
+//
+//   process.exit(1);
+// } else {
+//   console.log()
+//   console.log(
+//     `  ${chalk.bgGreen.white(' SUCCESS ')} ${chalk.green(
+//       `[Bind Requirements] successfully commit.`,
+//     )}\n\n`
+//   )
+// }

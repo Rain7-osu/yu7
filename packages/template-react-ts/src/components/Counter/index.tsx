@@ -1,11 +1,11 @@
 import { useCallback } from 'react';
 import { useSelector, useDispatch } from 'dva';
-import { GlobalState } from '../../models/global';
+import { IGlobalState } from '../../models/global';
 import { Button } from '../Button';
 import { Container } from './styles';
 
 export const Counter = () => {
-  const count = useSelector(({ global }: { global: GlobalState }) => global.currentCount);
+  const count = useSelector(({ global }: { global: IGlobalState }) => global.currentCount);
   const dispatch = useDispatch();
 
   const handleClick = useCallback(() => {

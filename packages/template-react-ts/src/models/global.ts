@@ -1,15 +1,14 @@
-import { fetchIncrement } from '../services/fetchIncrement';
-import { Model } from './types';
+import { IModel } from './types';
 
-export interface GlobalState {
+export interface IGlobalState {
   currentCount: number;
 }
 
-export const initState: GlobalState = {
+export const initState: IGlobalState = {
   currentCount: 0,
 };
 
-const model: Model<GlobalState> = {
+const model: IModel<IGlobalState> = {
   namespace: 'global',
   state: initState,
   reducers: {
@@ -22,12 +21,7 @@ const model: Model<GlobalState> = {
   },
   effects: {
     * incrementAsync(_, { put, select }) {
-      const currentValue = yield select(({ global }: { global: GlobalState }) => global.currentCount);
-      const res = yield fetchIncrement(currentValue);
-      yield put({
-        type: 'increment',
-        payload: res,
-      });
+      // do something async
     },
   },
 };

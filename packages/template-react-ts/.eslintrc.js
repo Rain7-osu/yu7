@@ -1,3 +1,22 @@
+const ignoreWords = [
+  'axios',
+  'dva',
+  'href',
+  'req',
+  'sno',
+  'tno',
+  'namespace',
+  'pathname',
+  'sider',
+  'len',
+  'vh',
+  'closable',
+  'Checkbox',
+  'gdaic',
+  'gdoic',
+  'cls',
+];
+
 module.exports = {
   'root': true,
   'env': {
@@ -94,7 +113,7 @@ module.exports = {
     'quotes': ['error', 'single'],
     'semi': ['error', 'always'],
     'require-await': 'error',
-    'yoda': ['error', 'always'],
+    // 'yoda': ['error', 'always'],
     'space-before-function-paren': ['error', {
       'anonymous': 'always',
       'named': 'never',
@@ -156,23 +175,7 @@ module.exports = {
         'templates': false,
         'identifiers': true,
         'lang': 'en_US',
-        'skipWords': [
-          'axios',
-          'dva',
-          'href',
-          'req',
-          'sno',
-          'tno',
-          'namespace',
-          'pathname',
-          'sider',
-          'len',
-          'vh',
-          'closable',
-          'Checkbox',
-          'gdaic',
-          'gdoic'
-        ],
+        'skipWords': ignoreWords,
         'skipIfMatch': [
           'httpInstance://[^s]*',
           'https://[^s]*',

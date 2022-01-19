@@ -1,6 +1,6 @@
 import type { AxiosRequestConfig } from 'axios';
-import type { IResponse } from './core/types';
-import { httpFactory } from './core/fetcher';
+import type { IResponse } from './types';
+import { httpFactory } from './fetcher';
 
 export const http = httpFactory();
 
@@ -35,7 +35,6 @@ const get = async <T>(url: string, config?: AxiosRequestConfig) => {
     config,
   );
   return transformResponse<T>(res);
-
 };
 
 const patch = async <T>(url: string, data: any, config?: AxiosRequestConfig) => {

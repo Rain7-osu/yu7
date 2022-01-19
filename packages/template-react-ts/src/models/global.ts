@@ -1,10 +1,14 @@
 import { IModel } from './types';
+import { ConfigKeys } from '../common/config-keys';
+import { getConfig } from '../services/requests/get-config';
 
 export interface IGlobalState {
+  config: Partial<Record<ConfigKeys, any>>;
   currentCount: number;
 }
 
 export const initState: IGlobalState = {
+  config: {},
   currentCount: 0,
 };
 
@@ -12,16 +16,26 @@ const model: IModel<IGlobalState> = {
   namespace: 'global',
   state: initState,
   reducers: {
-    increment(prevState, action) {
+    increment(state, { payload }) {
       return {
-        ...prevState,
-        currentCount: action.payload,
+        ...state,
+        currentCount: payload,
+      };
+    },
+    setConfig(state, { payload }) {
+      return {
+        ...state,
+        config: payload,
       };
     },
   },
   effects: {
-    * incrementAsync(_, { put, select }) {
-      // do something async
+    * getConfigAsync(_, { put, call }) {
+      const config = yield call(getConfig);
+      yield put({
+        type: 'setConfig',
+        payload: config,
+      });
     },
   },
 };

@@ -5,8 +5,11 @@ const msgPath = process.env.GIT_PARAMS;
 const msg = require('fs').readFileSync(msgPath, 'utf-8').trim();
 
 const releaseRE = /^v\d/;
+
 const commitRE =
-  /^(revert: )?(feat|fix|docs|dx|refactor|perf|test|workflow|build|ci|chore|types|wip|release|deps|style)(\(.+\))?: .{1,50}/;
+  /^(revert: )?(feat|fix|docs|dx|refactor|perf|test|workflow|build|ci|chore|types|wip|release|deps|style|Merge)(\(.+\))?: .{1,50}/;
+
+const bindRequirements = /to #\d+/;
 
 if (!releaseRE.test(msg) && !commitRE.test(msg)) {
   console.log();

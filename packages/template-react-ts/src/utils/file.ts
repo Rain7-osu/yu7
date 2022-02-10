@@ -9,4 +9,3 @@ export const getFileExtension = (filename: string): string => {
   }
   return filename.substring(index + 1);
 };
-

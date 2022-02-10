@@ -15,5 +15,6 @@ npx yu7 init
 
 ## templates
 * react-ts
+* react-i18n-server
 * express-reverse-proxy
 

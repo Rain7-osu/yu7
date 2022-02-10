@@ -29,6 +29,7 @@ const TEMPLATES = [
       'package.json',
       'tsconfig.json',
       'vite.config.ts',
+      '.gitignore',
     ],
     info: (appName) => {
       return `Please use these command to run your project.
@@ -47,15 +48,39 @@ const TEMPLATES = [
     info: (appName) => {
       return `Please use these command to run your project.
         cd ${appName}
+        pnpm i
         npm start
       `;
     },
   },
+  {
+    name: 'wx-mini-ts',
+    files: [
+      'miniprogram',
+      'typings',
+      '.eslintrc.js',
+      '.gitignore',
+      'package.json',
+      'project.config.json',
+      'tsconfig.json',
+      '.husky',
+      'script',
+    ],
+    info: (appName) => {
+      return `
+        Please use these command to run your project.
+        cd ${appName}
+        pnpm i
+        npx tsc --watch
+      `
+    }
+  }
 ];
 
 const FRAMEWORKS = [
   chalk.green(`${TEMPLATES[0].name} ${chalk.gray('(react-router, styled-components, classNames, dva, vite)')}`),
   chalk.blue(`${TEMPLATES[1].name} ${chalk.gray('(http-proxy-middleware)')}`),
+  chalk.green(`${TEMPLATES[2].name} ${chalk.gray('(wx-mini-program, typescript, eslint, husky)')}`),
 ];
 
 async function init() {

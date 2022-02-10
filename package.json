@@ -1,6 +1,6 @@
 {
   "name": "yu7",
-  "version": "0.8.2",
+  "version": "0.9.0",
   "description": "a cli tool for React + React-router + dva",
   "workspaces": [
     "packages/*"

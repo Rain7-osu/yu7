@@ -14,6 +14,10 @@ const ignoreWords = [
   'Checkbox',
   'gdaic',
   'gdoic',
+  'ouov',
+  'ovt',
+  'debounce',
+  'debounced',
   'cls',
 ];
 

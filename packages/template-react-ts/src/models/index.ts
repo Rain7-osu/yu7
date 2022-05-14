@@ -1,5 +1,3 @@
 import GlobalModal from './global';
 
-export default [
-  GlobalModal,
-];
+export default [GlobalModal];

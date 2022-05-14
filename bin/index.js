@@ -17,6 +17,22 @@ let targetDir;
 
 const DEFAULT_PROJECT_NAME = 'yu-project';
 
+const GIT_IGNORE = `
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+
+.idea
+.vscode
+.node
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+`;
+
 const TEMPLATES = [
   {
     name: 'react-ts',
@@ -165,6 +181,10 @@ async function init() {
         info(stdout);
       };
 
+      const writeGitIgnore = async () => {
+        await fe.outputFile(path.resolve(root, '.gitignore'), GIT_IGNORE)
+      }
+
       await gitInit();
 
       for (const file of TEMPLATES[framework].files) {
@@ -175,6 +195,8 @@ async function init() {
           error(err);
         }
       }
+
+      await writeGitIgnore();
 
       br();
       log(TEMPLATES[framework].info(appName));

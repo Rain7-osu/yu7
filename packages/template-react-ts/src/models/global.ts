@@ -1,6 +1,6 @@
-import { IModel } from './types';
 import { ConfigKeys } from '../common/config-keys';
 import { getConfig } from '../services/requests/get-config';
+import { IModel } from './types';
 
 export interface IGlobalState {
   config: Partial<Record<ConfigKeys, any>>;

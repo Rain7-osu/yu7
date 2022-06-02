@@ -45,7 +45,6 @@ const TEMPLATES = [
       'package.json',
       'tsconfig.json',
       'vite.config.ts',
-      '.gitignore',
     ],
     info: (appName) => {
       return `Please use these command to run your project.
@@ -75,7 +74,6 @@ const TEMPLATES = [
       'miniprogram',
       'typings',
       '.eslintrc.js',
-      '.gitignore',
       'package.json',
       'project.config.json',
       'tsconfig.json',
@@ -88,9 +86,9 @@ const TEMPLATES = [
         cd ${appName}
         pnpm i
         npx tsc --watch
-      `
-    }
-  }
+      `;
+    },
+  },
 ];
 
 const FRAMEWORKS = [
@@ -182,8 +180,8 @@ async function init() {
       };
 
       const writeGitIgnore = async () => {
-        await fe.outputFile(path.resolve(root, '.gitignore'), GIT_IGNORE)
-      }
+        await fe.outputFile(path.resolve(root, '.gitignore'), GIT_IGNORE);
+      };
 
       await gitInit();
 
@@ -211,11 +209,11 @@ async function init() {
     log(version);
   }
 
-  // function isValidPackageName(projectName) {
-  //   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
-  //     projectName,
-  //   );
-  // }
+  function isValidPackageName(projectName) {
+    return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
+      projectName,
+    );
+  }
 
   function isEmpty(path) {
     return fs.readdirSync(path).length === 0;
